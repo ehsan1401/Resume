@@ -11,9 +11,6 @@ import { MaterialSymbolsFormatListBulleted } from './icon/menu';
 function App() {
 
  
-
-
-
   const [showSlider, setshowSlider] = useState(false);
   const { value, setValue } = useContext(MyContext);
 
@@ -54,7 +51,7 @@ function App() {
     <div className="App ">
       
       <main className="grid md:flex flex-row overflow-hidden h-screen">
-        <div className={`${value? `md:w-3/4 w-full` : `w-full`} md:h-full p-7 md:pt-20 pt-28 transition-all transform duration-300 bg-cover bg-no-repeat md:bg-center bg-[-600px_0px] `}
+        <div className={`${value? `md:w-3/4 w-full` : `w-full`} md:h-full p-7 md:pt-20 pt-28 transition-all transform duration-300 bg-cover bg-no-repeat md:bg-left bg-[-600px_0px] `}
         style={{ backgroundImage: "url('/images/Wallpeaper_GPU.png')"}}
         >
           <Header />
