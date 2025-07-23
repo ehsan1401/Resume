@@ -6,10 +6,10 @@ function Header(){
 
   return(
       <div className="bg-transparent bg-opacity-20 absolute top-0 left-0 z-50 w-full text-center text-xs md:text-lg">
-          <ul className="flex md:gap-20 gap-5 justify-center items-center py-5 text-neutral-50"> 
+          <ul className="flex md:gap-20 gap-5 justify-center items-center py-5 text-Palette-Light-first"> 
             {items.map((item)=>{
               return(
-                <li className="hover:text-blue-800 hover:underline hover:scale-105 transition-all duration-300 cursor-pointer">{item}</li>
+                <li className="hover:text-Palette-Light-third hover:underline hover:scale-105 transition-all duration-300 cursor-pointer">{item}</li>
               )
             })}
           </ul>

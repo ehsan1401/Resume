@@ -42,17 +42,9 @@ function Footer(){
 
     return(
         <>
-        
-            <div className='bg-neutral-800 w-full h-72 flex'>
-                {/* <div>
-                    {Language ==="Fa" ? 
-                        <button className="bg-red-500" onClick={()=>setLanguage('En')}>English</button>
-                        :
-                        <button className="bg-red-500" onClick={()=>setLanguage('Fa')}>Farsi</button>
-                    }
-                </div> */}
+            <div className='bg-Palette-Light-first w-full h-72 flex'>
     
-                <div className="w-1/3 relative z-50 bg-neutral-800">
+                <div className="w-1/3 relative z-50 bg-Palette-Light-first">
                     <div className="avatar w-24 h-24 absolute bottom-7 left-5 border-2 border-solid border-white rounded-full hover:scale-110 transition-all duration-150">
                         <img src="/images/My_Avatar.png" alt="My Avatar" />
                     </div>
@@ -80,7 +72,7 @@ function Footer(){
                                     <MaterialSymbolsArrowBackRounded className="rotate-180"/><span className="text-xs flex px-2 items-center">Opera_9@</span>
                                 </div>
                             </a>
-                            <div className="flex items-center bg-neutral-800 relative z-10 gap-3 ">
+                            <div className="flex items-center bg-Palette-Light-first relative z-10 gap-3 ">
                                 <IcBaselineTelegram/>
                                 <p className="text-base">پروفایل من در تلگرام</p>  
                             </div>
@@ -91,7 +83,7 @@ function Footer(){
                                     <MaterialSymbolsArrowBackRounded className="rotate-180"/><span className="text-xs flex px-2 items-center">ehsan1401@</span>
                                 </div>
                             </a>
-                            <div className="flex items-center bg-neutral-800 relative z-10 gap-3 ">
+                            <div className="flex items-center bg-Palette-Light-first relative z-10 gap-3 ">
                                 <MdiGithub/>
                                 <p className="text-base">پروفایل من در گیتهاب</p>  
                             </div>
@@ -102,7 +94,7 @@ function Footer(){
                                     <MaterialSymbolsArrowBackRounded className="rotate-180"/><span className="text-xs flex px-2 items-center">ehsan-jangjo</span>
                                 </div>
                             </a>
-                            <div className="flex items-center bg-neutral-800 relative z-10 gap-3 ">
+                            <div className="flex items-center bg-Palette-Light-first relative z-10 gap-3 ">
                                 <EntypoSocialLinkedinWithCircle/>
                                 <p className="text-base">پروفایل من در لینکدین</p>  
                             </div>
@@ -113,7 +105,7 @@ function Footer(){
                                     <MaterialSymbolsArrowBackRounded className="rotate-180"/><span className="text-xs flex px-2 items-center">eh3anjangjo@</span>
                                 </div>
                             </a>
-                            <div className="flex items-center bg-neutral-800 relative z-10 gap-3 ">
+                            <div className="flex items-center bg-Palette-Light-first relative z-10 gap-3 ">
                                 <MdiInstagram/>
                                 <p className="text-base">پروفایل من در اینستاگرام</p>  
                             </div>
@@ -139,7 +131,7 @@ function Footer(){
                                     <MaterialSymbolsArrowBackRounded/><span className="text-xs flex px-2 items-center">@Opera_9</span>
                                 </div>
                             </a>
-                            <div className="flex items-center bg-neutral-800 relative z-10 gap-3 ">
+                            <div className="flex items-center bg-Palette-Light-first relative z-10 gap-3 ">
                                 <IcBaselineTelegram/>
                                 <p className="text-base">My Telgram Profile</p>  
                             </div>
@@ -151,7 +143,7 @@ function Footer(){
                                     <MaterialSymbolsArrowBackRounded/><span className="text-xs flex px-2 items-center">@ehsan1401</span>
                                 </div>
                             </a>
-                            <div className="flex items-center bg-neutral-800 relative z-10 gap-3 ">
+                            <div className="flex items-center bg-Palette-Light-first relative z-10 gap-3 ">
                                 <MdiGithub/>
                                 <p className="text-base">My github Profile</p>  
                             </div>
@@ -163,7 +155,7 @@ function Footer(){
                                     <MaterialSymbolsArrowBackRounded/><span className="text-xs flex px-2 items-center">ehsan-jangjo</span>
                                 </div>
                             </a>
-                            <div className="flex items-center bg-neutral-800 relative z-10 gap-3 ">
+                            <div className="flex items-center bg-Palette-Light-first relative z-10 gap-3 ">
                                 <EntypoSocialLinkedinWithCircle/>
                                 <p className="text-base">My Linkedin Profile</p>  
                             </div>
@@ -175,7 +167,7 @@ function Footer(){
                                     <MaterialSymbolsArrowBackRounded/><span className="text-xs flex px-2 items-center">@eh3anjangjo</span>
                                 </div>
                             </a>
-                            <div className="flex items-center bg-neutral-800 relative z-10 gap-3 ">
+                            <div className="flex items-center bg-Palette-Light-first relative z-10 gap-3 ">
                                 <MdiInstagram/>
                                 <p className="text-base">My Instagram Profile</p>  
                             </div>
@@ -198,7 +190,7 @@ function Footer(){
 
 
                 </div>
-                <div className="w-1/3 bg-neutral-800 relative z-50 px-3 py-5">
+                <div className="w-1/3 bg-Palette-Light-first relative z-50 px-3 py-5">
                 {!LanguageFa ? 
                     <h1 className="text-2xl font-bold text-neutral-50 pr-10" dir="rtl" style={{fontFamily : "Vazir"}}>ابزار‌ها</h1>
                     :
@@ -206,20 +198,20 @@ function Footer(){
                 }
                     <div className="py-5 flex justify-center">
                         {LanguageFa ? 
-                                <div className="flex relative border-2 border-white border-solid w-72 h-14 bg-neutral-500 rounded-2xl overflow-hidden"
+                                <div className="flex relative border-2 border-white border-solid w-72 h-14 bg-Palette-Light-second rounded-2xl overflow-hidden"
                                 style={{fontFamily:'Vazir'}}
                                 >
                                     <button
                                     onClick={handleLangurageChanger}
-                                    className="w-1/4 hover:w-[105%] transition-all duration-200 h-full absolute left-0 z-20 bg-neutral-900">
-                                        <div className="w-full h-full bg-neutral-100 rounded-r-2xl">
-                                            <span className="flex justify-center items-center h-full font-bold text-neutral-900">
+                                    className="w-1/4 hover:w-[105%] transition-all duration-200 h-full absolute left-0 z-20 bg-Palette-Light-second">
+                                        <div className="w-full h-full bg-Palette-Light-fourth rounded-r-2xl">
+                                            <span className="flex justify-center items-center h-full font-bold text-Palette-Light-first">
                                                 Fa
                                             </span>
                                         </div>
                                     </button>
-                                    <div className="w-3/4 h-full bg-neutral-100 absolute right-0 z-10" >
-                                        <div className="w-full h-full bg-neutral-900">
+                                    <div className="w-3/4 h-full bg-Palette-Light-fourth absolute right-0 z-10" >
+                                        <div className="w-full h-full bg-Palette-Light-second">
                                             <span className="flex justify-center items-center h-full font-bold text-neutral-100">
                                                 Web Language : En
                                             </span>
@@ -227,21 +219,21 @@ function Footer(){
                                     </div>
                                 </div>
                             :
-                                <div className="flex relative border-2 border-white border-solid w-72 h-14 bg-neutral-500 rounded-2xl overflow-hidden"
+                                <div className="flex relative border-2 border-white border-solid w-72 h-14 bg-Palette-Light-second rounded-2xl overflow-hidden"
                                 style={{fontFamily:'Vazir'}}
                                 >
 
-                                    <div className="w-3/4 h-full bg-neutral-900 absolute left-0-0 z-10" >
-                                        <div className="w-full h-full bg-neutral-100">
-                                            <span className="flex justify-center items-center h-full font-bold">
+                                    <div className="w-3/4 h-full bg-Palette-Light-second absolute left-0-0 z-10" >
+                                        <div className="w-full h-full bg-Palette-Light-fourth">
+                                            <span className="flex justify-center items-center h-full font-bold text-Palette-Light-first">
                                                 زبان وبسایت: فارسی
                                             </span>
                                         </div>
                                     </div>
                                     <button 
                                     onClick={handleLangurageChanger}
-                                    className="w-1/4 hover:w-[100%] transition-all duration-200 h-full absolute right-0 z-20 bg-neutral-100">
-                                        <div className="w-full h-full bg-neutral-900 rounded-l-2xl">
+                                    className="w-1/4 hover:w-[100%] transition-all duration-200 h-full absolute right-0 z-20 bg-Palette-Light-fourth">
+                                        <div className="w-full h-full bg-Palette-Light-second rounded-l-2xl">
                                             <span className="flex justify-center items-center h-full font-bold text-neutral-100">
                                                 انگلیسی
                                             </span>
