@@ -7,6 +7,11 @@ import { BxBxlGmail } from "../icon/Gmail";
 import { MdiInstagram } from "../icon/instagram";
 import { MaterialSymbolsArrowBackRounded } from "../icon/Arrow";
 import { AlertContext } from "../utilities/AlertContext";
+import { useLanguage } from "../utilities/LanguageContext";
+import TypingEffect from "../utilities/TypingEffect";
+
+
+
 
 function Footer(){
 
@@ -15,10 +20,17 @@ function Footer(){
       return stored ? JSON.parse(stored) : false;
     });
     const { showAlert } = useContext(AlertContext);
+    const { languageFa, toggleLanguage } = useLanguage();
+
+
+    const text = "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز ";
+    const text2 = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos necessitatibus officiis amet inventore."
+    
 
 
     useEffect(() => {
         localStorage.setItem("LanguageFa", JSON.stringify(LanguageFa));
+        toggleLanguage(LanguageFa);
       }, [LanguageFa]);
 
       
@@ -48,10 +60,18 @@ function Footer(){
                     <div className="avatar w-24 h-24 absolute bottom-7 left-5 border-2 border-solid border-white rounded-full hover:scale-110 transition-all duration-150">
                         <img src="/images/My_Avatar.png" alt="My Avatar" />
                     </div>
-                    <div>
+                    <div className="relative">
+
+                        {/* check latar for justify text here  */}
+
+                        <div className="absolute z-50 left-44 top-12 w-64">
+                            <TypingEffect text={languageFa ? text2 : text} lang={languageFa ? 'en' : 'fa'} speed={20} />
+                        </div>    
                         <SpeechBubbleSVG className="w-96 h-60 absolute right-2 top-8 " />
+
                     </div>
                 </div>
+
                 <div className="w-1/3 px-3 py-5">
                 {!LanguageFa ? 
                 

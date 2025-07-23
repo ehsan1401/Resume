@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const TypingEffect = ({ text = "", speed = 100, lang = "en" }) => {
+const TypingEffect = ({ text , speed , lang }) => {
   const [displayedText, setDisplayedText] = useState("");
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const TypingEffect = ({ text = "", speed = 100, lang = "en" }) => {
 
   const direction = lang === "fa" ? "rtl" : "ltr";
 
-  return <span dir={direction}>{displayedText}</span>;
+  return <span dir={direction} className="flex items-center">{displayedText}</span>;
 };
 
 export default TypingEffect;
