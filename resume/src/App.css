@@ -3,8 +3,26 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Vazir';
-    src: url('./Fonts/Vazir.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+  font-family: 'Vazir';
+  src: url('./Fonts/Vazir.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: 'homa';
+  src: url('./Fonts/W_homa.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Parand';
+  src: url('./Fonts/Mj_Parand.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+

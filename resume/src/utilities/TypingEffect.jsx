@@ -8,7 +8,7 @@ const TypingEffect = ({ text , speed , lang }) => {
 
     if (!text || typeof text !== "string") return;
 
-    let index = 0;
+    let index = -1;
     const interval = setInterval(() => {
       // Prevent out-of-bounds or undefined access
       if (index < text.length) {

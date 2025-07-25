@@ -14,8 +14,9 @@ function Header(){
             {(languageFa ? itemsEn : itemsFa).map((item)=>{
               return(
                 <li 
-                  className={`hover:text-Palette-Light-third hover:underline hover:scale-105 transition-all duration-300 cursor-pointer  ${languageFa ? '' : 'font-bold'}`}
+                  className={`hover:text-Palette-Light-third hover:underline hover:scale-105 transition-all duration-300 cursor-pointer  ${languageFa ? '' : 'text-2xl font-semibold'}`}
                   key={item}
+                  style={{fontFamily: `${languageFa ? "Vazir" : "Parand"}`}}
                 >
                   {item}
                 </li>

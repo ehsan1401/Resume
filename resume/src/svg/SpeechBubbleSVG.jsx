@@ -1,22 +1,11 @@
-const SpeechBubbleWideSVG = (props) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 405.49 291.06"
-    {...props} // allows passing className, style, etc.
+const SpeechBubbleBox = ({ children, className = "", ...props }) => (
+  <p
+    className={`rounded-xl border-2 border-gray-300 bg-white shadow-lg p-6 text-center ${className}`}
+    style={{ minWidth: 200, minHeight: 80, ...props.style }}
+    {...props}
   >
-    <g data-name="Layer 2">
-      <g data-name="Layer 1">
-        <path
-          d="M373.52,291.06h-301c-17.65,0-32-11.77-32-26.29V26.3c0-1.75.21-11.07,9.36-18.6A35.61,35.61,0,0,1,72.51,0h301c17.66,0,32,11.77,32,26.3V264.77C405.49,279.29,391.18,291.06,373.52,291.06Z"
-          fill="#fff"
-        />
-        <path
-          d="M0,211.74A126.36,126.36,0,0,0,20.07,195.4a109.86,109.86,0,0,0,20.48-28.17c6.15,9.71,17.33,29.19,20.48,50.05,1.39,9.16.3,15.43-2.48,21.44-4.63,10-13.2,16.12-18,19a108.15,108.15,0,0,0-18.41-27.1A125.68,125.68,0,0,0,0,211.74Z"
-          fill="#fff"
-        />
-      </g>
-    </g>
-  </svg>
+    {children}
+  </p>
 );
 
-export default SpeechBubbleWideSVG;
+export default SpeechBubbleBox;

@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import SpeechBubbleSVG from "../svg/SpeechBubbleSVG";
 import { MdiGithub } from "../icon/github";
 import { EntypoSocialLinkedinWithCircle } from "../icon/LinkedIn";
 import { IcBaselineTelegram } from "../icon/Telegram";
@@ -9,6 +8,7 @@ import { MaterialSymbolsArrowBackRounded } from "../icon/Arrow";
 import { AlertContext } from "../utilities/AlertContext";
 import { useLanguage } from "../utilities/LanguageContext";
 import TypingEffect from "../utilities/TypingEffect";
+import SpeechBubbleBox from "../svg/SpeechBubbleSVG";
 
 
 
@@ -56,18 +56,17 @@ function Footer(){
         <>
             <div className='bg-Palette-Light-first w-full h-72 flex'>
     
-                <div className="w-1/3 relative z-50 bg-Palette-Light-first">
-                    <div className="avatar w-24 h-24 absolute bottom-7 left-5 border-2 border-solid border-white rounded-full hover:scale-110 transition-all duration-150">
-                        <img src="/images/My_Avatar.png" alt="My Avatar" />
-                    </div>
+                <div className="w-1/3 relative z-50 bg-Palette-Light-first flex justify-center items-center gap-3">
                     <div className="relative">
-
+                        <div className="avatar w-20 h-20 border-2 border-solid border-white rounded-full hover:scale-110 transition-all duration-150 absolute -bottom-8 -left-8 z-50">
+                            <img src="/images/My_Avatar.png" alt="My Avatar" />
+                        </div>
                         {/* check latar for justify text here  */}
 
-                        <div className="absolute z-50 left-44 top-12 w-64">
+                        {/* <SpeechBubbleSVG className="w-96 h-60 absolute right-2 top-8 " /> */}
+                        <SpeechBubbleBox className="w-80 h-min-40 bg-white px-7 pb-10">
                             <TypingEffect text={languageFa ? text2 : text} lang={languageFa ? 'en' : 'fa'} speed={20} />
-                        </div>    
-                        <SpeechBubbleSVG className="w-96 h-60 absolute right-2 top-8 " />
+                        </SpeechBubbleBox>
 
                     </div>
                 </div>
