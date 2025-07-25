@@ -8,7 +8,7 @@ import { useContext, useState } from 'react';
 import { MyContext } from './utilities/MyContext';
 import { Dropdown, FloatButton } from 'antd';
 import { MaterialSymbolsFormatListBulleted } from './icon/menu';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MainPage from './Components/MainPage';
 
 
 
@@ -50,7 +50,6 @@ function App() {
   ];
 
   return (
-    <BrowserRouter>
       <div className="App ">
         <main className="grid md:flex flex-row overflow-hidden h-screen">
           
@@ -68,7 +67,9 @@ function App() {
           style={{ backgroundImage: "url('/images/Wallpeaper_GPU.png')"}}
           >
             <Header />
+            <MainPage />
           </div>
+          
           <aside className={`${value ? `w-1/4` : `w-0`} h-full transition-all transform duration-300 hidden md:block`}>
             <Slider />
           </aside>
@@ -76,7 +77,6 @@ function App() {
 
         <Footer />
       </div>
-    </BrowserRouter>
 
   );
 }
