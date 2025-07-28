@@ -1,6 +1,11 @@
-import { useContext } from "react";
-import { MyContext } from "../utilities/MyContext";
-import TypingEffect from "../utilities/TypingEffect";
+import { IconParkTwotoneGraphicStitchingFour } from "../icon/graphicIcon";
+import { MaterialSymbolsHomeAppLogo } from "../icon/Home";
+import { IxJavaScript } from "../icon/javaScriptIcon";
+import { MaterialSymbolsAccountBox } from "../icon/profileIcon";
+import { FileIconsJsxAtom } from "../icon/reactIcon";
+import { StreamlineInterfaceEditSwatchColorColorsDesignPaintingPaletteSampleSwatch } from "../icon/Sample";
+import { MaterialSymbolsDeployedCodeAccount } from "../icon/skillIcon";
+import { IxWorkCaseFilled } from "../icon/Work";
 import { useLanguage } from "../utilities/LanguageContext";
 
 
@@ -8,32 +13,111 @@ function Slider(){
 
 
     const root = window.document.documentElement;
-    root.classList.add('dark');
+    root.classList.add('light');
 
 
     const { languageFa } = useLanguage();
 
+    
+    const DrawerItems = [
+        {
+            "name" : "Profile",
+            "EnTitle" : "Profile",
+            "FaTitle" : "نمایه شخصی",
+            "param" : "Profile",
+            "icon": <MaterialSymbolsAccountBox/>
+        },
+        {
+            "name" : "Technical Skills",
+            "EnTitle" : "Technical Skills",
+            "FaTitle" : "مهارت های فنی",
+            "param" : "Technical-Skills",
+            "icon": <MaterialSymbolsDeployedCodeAccount/>
+        },
+        {
+            "name" : "Work Experience",
+            "EnTitle" : "Work Experience",
+            "FaTitle" : "تجربیات کاری",
+            "param" : "Work-Experience",
+            "icon": <IxWorkCaseFilled/>
+        },
+        {
+            "name" : "Front-End",
+            "EnTitle" : "Front-End",
+            "FaTitle" : "فرانت اند",
+            "param" : "Front-End",
+            "icon": <IxJavaScript/>
+        },
+        {
+            "name" : "Graphic Design",
+            "EnTitle" : "Graphic Design",
+            "FaTitle" : "گرافیک",
+            "param" : "Graphic",
+            "icon": <IconParkTwotoneGraphicStitchingFour/>
+        },
+        {
+            "name" : "Portfolio",
+            "EnTitle" : "Portfolio",
+            "FaTitle" : "نمونه کار‌ها",
+            "param" : "Portfolio",
+            "icon": <StreamlineInterfaceEditSwatchColorColorsDesignPaintingPaletteSampleSwatch/>
+        },
+    ]
 
-
-    const { value, setValue } = useContext(MyContext);
-    const text = "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.";
-    const text2 = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos necessitatibus officiis amet inventore, exercitationem, esse ipsa iusto ex reprehenderit aut cumque aliquam fugiat vero veniam soluta blanditiis expedita, similique accusamus."
     
     return(
-        <>
-            <div className='bg-Palette-Light-first dark:bg-Palette-Dark-fourth h-full w-full py-8 px-5'>
-                <div className="w-full h-full border-2 border-lime-600 border-solid text-white p-2">
-                    {value && 
-                        // <TypingEffect text={text} lang="fa" speed={20} />
-                        <TypingEffect text={languageFa ? text2 : text} lang="en" speed={20} />
-                    }
+            <>
+            <div className="bg-white dark:bg-[#101010] h-full w-full relative overflow-hidden">
 
-
-
+                <div className="absolute top-0 right-0 z-0">
+                <div className="absolute w-[500px] h-[500px] dark:bg-[#292929] bg-[#e1f5f3] rounded-full -right-24 -top-32 blur-sm"></div>
+                <div className="absolute w-[420px] h-[420px] dark:bg-[#3f3f3f] bg-[#caf3eb] rounded-full -right-20 -top-28 blur-sm"></div>
+                <div className="absolute w-[320px] h-[320px] dark:bg-[#535353] bg-[#b6f0e4] rounded-full -right-11 -top-16 blur-sm"></div>
                 </div>
-            </div>
+
         
-        </>
+                <div className="relative z-10">
+                <div 
+                    className="w-full h-60 bg-contain bg-left bg-no-repeat m-3"
+                    style={{ backgroundImage: "url('/images/Me-and_code.png')"}}
+                ></div>
+
+                <ul className={`w-full h-auto px-8 py-3 flex flex-col gap-3 pt-5`}>
+                    {DrawerItems.map((item, index) => (
+                    <a  
+                        href="#" 
+                        key={index} 
+                        className="p-2 hover:text-blue-500 overflow-hidden transition-all duration-200 hover:shadow-lg"
+                        
+                    > 
+                        {languageFa ? 
+                            <div 
+                                className="flex justify-start gap-3"
+                                style={{fontFamily:"vazir"}}
+                            >
+                                <span className="flex justify-center items-center text-2xl">{item.icon}</span>
+                                <span className="text-xl">{item.EnTitle}</span>
+                                
+                            </div>
+                        : 
+                            <div 
+                                className="flex justify-end gap-3"
+                                style={{fontFamily:"aban"}}
+                            >
+                                <span className="text-xl">{item.FaTitle}</span>
+                                <span className="flex justify-center items-center text-2xl">{item.icon}</span>
+                                
+                                
+                            </div>
+                        }
+                    </a>
+                    ))}
+                </ul>
+                </div>
+
+            </div>
+            </>
+
     )
 }
 export default Slider;

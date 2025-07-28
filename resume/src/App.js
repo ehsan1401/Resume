@@ -9,6 +9,7 @@ import { MyContext } from './utilities/MyContext';
 import { Dropdown, FloatButton } from 'antd';
 import { MaterialSymbolsFormatListBulleted } from './icon/menu';
 import MainPage from './Components/MainPage';
+import { useLanguage } from './utilities/LanguageContext';
 
 
 
@@ -16,6 +17,8 @@ function App() {
  
   const [showSlider, setshowSlider] = useState(false);
   const { value, setValue } = useContext(MyContext);
+  const { languageFa } = useLanguage();
+
 
   function showSliderHandler(){
       setshowSlider(!showSlider)
@@ -62,6 +65,11 @@ function App() {
             </Dropdown>
           </div>
 
+          {languageFa && 
+            <aside className={`${value ? `w-1/4` : `w-0`} h-full transition-all transform duration-300 hidden md:block`}>
+              <Slider />
+            </aside>
+          }
 
           <div className={`${value? `md:w-3/4 w-full` : `w-full`} md:h-full p-7 md:pt-20 pt-28 transition-all transform duration-300 bg-cover bg-no-repeat md:bg-left bg-[-600px_0px] `}
           style={{ backgroundImage: "url('/images/Wallpeaper_GPU.png')"}}
@@ -69,10 +77,12 @@ function App() {
             <Header />
             <MainPage />
           </div>
-          
-          <aside className={`${value ? `w-1/4` : `w-0`} h-full transition-all transform duration-300 hidden md:block`}>
-            <Slider />
-          </aside>
+          {!languageFa && 
+            <aside className={`${value ? `w-1/4` : `w-0`} h-full transition-all transform duration-300 hidden md:block`}>
+              <Slider />
+            </aside>
+          }
+
         </main>
 
         <Footer />
