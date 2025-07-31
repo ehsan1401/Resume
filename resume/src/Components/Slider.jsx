@@ -1,8 +1,6 @@
 import { IconParkTwotoneGraphicStitchingFour } from "../icon/graphicIcon";
-import { MaterialSymbolsHomeAppLogo } from "../icon/Home";
 import { IxJavaScript } from "../icon/javaScriptIcon";
 import { MaterialSymbolsAccountBox } from "../icon/profileIcon";
-import { FileIconsJsxAtom } from "../icon/reactIcon";
 import { StreamlineInterfaceEditSwatchColorColorsDesignPaintingPaletteSampleSwatch } from "../icon/Sample";
 import { MaterialSymbolsDeployedCodeAccount } from "../icon/skillIcon";
 import { IxWorkCaseFilled } from "../icon/Work";
@@ -17,6 +15,7 @@ function Slider(){
 
 
     const { languageFa } = useLanguage();
+
 
     
     const DrawerItems = [
@@ -64,7 +63,16 @@ function Slider(){
         },
     ]
 
+    const itemParamHandler = (pageParam) => {
+        const params = new URLSearchParams(window.location.search);
+        params.set("page", pageParam);
+        const newUrl = `${window.location.pathname}?${params.toString()}`;
+        window.history.pushState({}, "", newUrl);
+      };
+      
+      
     
+
     return(
             <>
             <div className="bg-white dark:bg-[#101010] h-full w-full relative overflow-hidden">
@@ -84,10 +92,10 @@ function Slider(){
 
                 <ul className={`w-full h-auto px-8 py-3 flex flex-col gap-3 pt-5`}>
                     {DrawerItems.map((item, index) => (
-                    <a  
-                        href="#" 
+                    <button 
                         key={index} 
                         className="p-2 hover:text-blue-500 overflow-hidden transition-all duration-200 hover:shadow-lg"
+                        onClick={()=>{itemParamHandler(item.param)}}
                         
                     > 
                         {languageFa ? 
@@ -110,7 +118,7 @@ function Slider(){
                                 
                             </div>
                         }
-                    </a>
+                    </button>
                     ))}
                 </ul>
                 </div>

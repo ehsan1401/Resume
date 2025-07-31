@@ -1,20 +1,112 @@
+import { useEffect, useState } from "react";
+import Home from "./panels/Home";
+import AboutMe from "./panels/AboutMe";
+import Experince from "./panels/experince";
+import Profile from "./panels/profile";
+import Skills from "./panels/skills";
+import WorkExperience from "./panels/WorkExperience";
+import FrontEnd from "./panels/FrontEnd";
+import Graphic from "./panels/Graphic";
+import Portfolio from "./panels/Portfolio";
+
+function MainPage() {
+  const test = true;
+  const [pageParam, setPageParam] = useState(null);
 
 
-function MainPage(){
-    const test = true ; 
+  const getCurrentPage = () => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("page");
+  };
 
-    return(
-        <div className="flex justify-center items-center w-full h-full">
-            {/* <button onClick={showSliderHandler}>Show Slider</button> */}
-            {test ? 
-                <div className="bg-neutral-700/30 overflow-x-hidden overflow-y-scroll backdrop-blur-md w-full h-full rounded-2xl shadow-lg border border-white/10">
-                
-                </div>
-                :
-             <></>   
-            }
+  useEffect(() => {
+    setPageParam(getCurrentPage());
+
+    const handleLocationChange = () => {
+      setPageParam(getCurrentPage());
+    };
+
+    const originalPushState = window.history.pushState;
+    window.history.pushState = function (...args) {
+      originalPushState.apply(this, args);
+      window.dispatchEvent(new Event("pushstate"));
+    };
+
+    window.addEventListener("popstate", handleLocationChange);
+    window.addEventListener("pushstate", handleLocationChange);
+
+    return () => {
+      window.removeEventListener("popstate", handleLocationChange);
+      window.removeEventListener("pushstate", handleLocationChange);
+    };
+  }, []);
+
+  const PanelItems = [
+    {
+        'name': "Home",
+        'param' : 'Home',
+        'component' : <Home/>
+    },
+    {
+        'name': "About Me",
+        'param' : 'About-Me',
+        'component' : <AboutMe/>
+    },
+    {
+        'name': "experince",
+        'param' : 'experince',
+        'component' : <Experince/>
+    },
+    {
+        'name': "Profile",
+        'param' : 'Profile',
+        'component' : <Profile/>
+    },
+    {
+        'name': "Technical Skills",
+        'param' : 'Technical-Skills',
+        'component' : <Skills/>
+    },
+    {
+        'name': "Work Experience",
+        'param' : 'Work-Experience',
+        'component' : <WorkExperience/>
+    },
+    {
+        'name': "Front-End",
+        'param' : 'Front-End',
+        'component' : <FrontEnd/>
+    },
+    {
+        'name': "Graphic",
+        'param' : 'Graphic',
+        'component' : <Graphic/>
+    },
+    {
+        'name': "Portfolio",
+        'param' : 'Portfolio',
+        'component' : <Portfolio/>
+    },
+  ]
+
+  return (
+    <div className="flex justify-center items-center w-full h-full">
+      {pageParam ? (
+        <div className="bg-neutral-700/30 p-5 overflow-x-hidden overflow-y-scroll backdrop-blur-md w-full h-full rounded-2xl shadow-lg border border-white/10">
+        {PanelItems
+        .filter((panelit) => panelit.param === pageParam)
+        .map((panelit, index) => (
+            <div key={index}>
+            {panelit.component}
+            </div>
+        ))}
 
         </div>
-    )
+      ) : (
+        <></>
+      )}
+    </div>
+  );
 }
+
 export default MainPage;
