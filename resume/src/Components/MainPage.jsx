@@ -92,7 +92,7 @@ function MainPage() {
   return (
     <div className="flex justify-center items-center w-full h-full">
       {pageParam ? (
-        <div className="bg-neutral-700/30 p-5 overflow-x-hidden overflow-y-scroll backdrop-blur-md w-full h-full rounded-2xl shadow-lg border border-white/10">
+        <div className="bg-neutral-100/90 p-5 overflow-x-hidden overflow-y-scroll backdrop-blur-md w-full h-full rounded-2xl shadow-lg border border-white/10">
         {PanelItems
         .filter((panelit) => panelit.param === pageParam)
         .map((panelit, index) => (

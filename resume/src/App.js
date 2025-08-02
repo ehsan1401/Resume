@@ -4,7 +4,7 @@ import Slider from './Components/Slider';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
 
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { MyContext } from './utilities/MyContext';
 import { Dropdown, FloatButton } from 'antd';
 import { MaterialSymbolsFormatListBulleted } from './icon/menu';
