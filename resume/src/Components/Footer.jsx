@@ -23,8 +23,8 @@ function Footer(){
     const { languageFa, toggleLanguage } = useLanguage();
 
 
-    const text = "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز ";
-    const text2 = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos necessitatibus officiis amet inventore."
+    const text = "من احسان جنگجو هستم، توسعه‌دهنده‌ی فرانت‌اند با تمرکز روی Next.js و Tailwind. دانشجوی مهندسی کامپیوترم و به یادگیری و پیشرفت علاقه دارم.";
+    const text2 = "I'm Ehsan Jangjo, a front-end developer focused on Next.js and Tailwind CSS. I'm a computer engineering student, passionate about learning and growth."
     
 
 
